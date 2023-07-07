@@ -24,6 +24,11 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
+- name: Configuring Required log format
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 - name: Enabling and restarting Nginx Server
   ansible.builtin.systemd:
     state: restarted
